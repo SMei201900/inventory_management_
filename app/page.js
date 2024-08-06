@@ -28,6 +28,7 @@ export default function Home() {
 			});
 		});
 		setInventory(inventoryList);
+		console.log(inventoryList);
 	};
 
 	//this runs the updateInventory code for whenever the [] changes
