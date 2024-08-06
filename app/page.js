@@ -10,7 +10,15 @@ import {
 	TextField,
 	Button,
 } from "@mui/material";
-import { collection, deleteDoc, doc, getDocs, query } from "firebase/firestore";
+import {
+	collection,
+	deleteDoc,
+	doc,
+	getDocs,
+	query,
+	getDoc,
+	setDoc,
+} from "firebase/firestore";
 
 export default function Home() {
 	const [inventory, setInventory] = useState([]); //state variable to store inventory
@@ -149,31 +157,32 @@ export default function Home() {
 						Inventory Items
 					</Typography>
 				</Box>
+
+				<Stack width="800px" height="300px" spacing={2} overflow="auto">
+					{inventory.map(({ name, quantity }) => (
+						<Box
+							key={name}
+							width="100%"
+							minHeight="150px"
+							display="flex"
+							alignItems="center"
+							justifyContent="space-between"
+							bgColor="#f0f0f0"
+							padding={5}
+						>
+							<Typography variant="h3" color="#333" textAlign="center">
+								{name.charAt(0).toUpperCase() + name.slice(1)}
+							</Typography>
+							<Typography variant="h3" color="#333" textAlign="center">
+								{quantity}
+							</Typography>
+							<Button variant="contained" onClick={() => removeItem(name)}>
+								Remove
+							</Button>
+						</Box>
+					))}
+				</Stack>
 			</Box>
-			<Stack width="800px" height="300px" spacing={2} overflow="auto">
-				{inventory.map(({ name, quantity }) => (
-					<Box
-						key={name}
-						width="100%"
-						minHeight="150px"
-						display="flex"
-						alignItems="center"
-						justifyContent="space-between"
-						bgColor="#f0f0f0"
-						padding={5}
-					>
-						<Typography variant="h3" color="#333" textAlign="center">
-							{name.charAt(0).toUpperCase() + name.slice(1)}
-						</Typography>
-						<Typography variant="h3" color="#333" textAlign="center">
-							{quantity}
-						</Typography>
-						<Button variant="contained" onClick={() => removeItem(name)}>
-							Remove
-						</Button>
-					</Box>
-				))}
-			</Stack>
 		</Box>
 	);
 }
