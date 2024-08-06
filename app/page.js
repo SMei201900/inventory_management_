@@ -86,7 +86,17 @@ export default function Home() {
 					top="50%"
 					left="50%"
 					transform="translate(-50%,-50%)"
-				></Box>
+					width={400}
+					bgcolor="white"
+					border="2px solid #000"
+					boxShadow={24}
+					p={4}
+					display="flex"
+					flexDirection="column"
+					gap={3}
+				>
+					<Typography></Typography>
+				</Box>
 			</Modal>
 			<Typography variant="h1">Inventory Management</Typography>
 		</Box>
