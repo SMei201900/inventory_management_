@@ -14,7 +14,7 @@ import { collection, deleteDoc, doc, getDocs, query } from "firebase/firestore";
 
 export default function Home() {
 	const [inventory, setInventory] = useState([]); //state variable to store inventory
-	const [open, setOpen] = useState(true); //this is how we are going to add or remove stuff
+	const [open, setOpen] = useState(false); //this is how we are going to add or remove stuff
 	const [itemName, setItemName] = useState(""); //this is where we store what we type
 
 	//async means it wont block our code when fetching; if blocked, entire website freezes
