@@ -168,12 +168,7 @@ export default function Home() {
 						<Typography variant="h3" color="#333" textAlign="center">
 							{quantity}
 						</Typography>
-						<Button
-							variant="contained"
-							onClick={() => {
-								removeItem(name);
-							}}
-						>
+						<Button variant="contained" onClick={() => removeItem(name)}>
 							Remove
 						</Button>
 					</Box>
