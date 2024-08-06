@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { firestore } from "@/firebase";
-import { Box, Modal, Typography, Stack } from "@mui/material";
+import { Box, Modal, Typography, Stack, TextField } from "@mui/material";
 import { collection, deleteDoc, doc, getDocs, query } from "firebase/firestore";
 
 export default function Home() {
@@ -99,7 +99,14 @@ export default function Home() {
 				>
 					<Typography variant="h6">Add Item</Typography>
 					<Stack width="100%" direction="row" spacing={2}>
-						<TextField></TextField>
+						<TextField
+							variant="outlined"
+							fullWidth
+							value={itemName}
+							onChange={(e) => {
+								setItemName(e.target.value);
+							}}
+						></TextField>
 					</Stack>
 				</Box>
 			</Modal>
