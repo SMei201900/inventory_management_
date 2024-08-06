@@ -41,11 +41,12 @@ export default function Home() {
 		<Box>
 			<Typography variant="h1">Inventory Management</Typography>
 			{inventory.forEach((item) => {
+				console.log(inventoryList);
 				return (
-					<>
+					<Box>
 						{item.name}
 						{item.count}
-					</>
+					</Box>
 				);
 			})}
 		</Box>
