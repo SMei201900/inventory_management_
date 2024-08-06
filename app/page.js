@@ -9,6 +9,9 @@ export default function Home() {
 	const [open, setOpen] = useState(false); //this is how we are going to add or remove stuff
 	const [itemName, setItemName] = useState(""); //this is where we store what we type
 
+	//async means it wont block our code when fetching
+	const updateInventory = async () => {};
+
 	return (
 		<Box>
 			<Typography variant="h1">Inventory Management</Typography>
