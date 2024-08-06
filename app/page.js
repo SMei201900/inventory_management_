@@ -39,6 +39,14 @@ export default function Home() {
 	return (
 		<Box>
 			<Typography variant="h1">Inventory Management</Typography>
+			{inventory.forEach((item) => {
+				return (
+					<>
+						{item.name}
+						{item.count}
+					</>
+				);
+			})}
 		</Box>
 	);
 }
