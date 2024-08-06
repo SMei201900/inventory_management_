@@ -115,12 +115,15 @@ export default function Home() {
 							}}
 						/>
 						<Button
+							variant="outlined"
 							onClick={() => {
 								addItem(itemName);
 								setItemName("");
 								handleClose();
 							}}
-						></Button>
+						>
+							Add
+						</Button>
 					</Stack>
 				</Box>
 			</Modal>
