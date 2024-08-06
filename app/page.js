@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { firestore } from "@/firebase";
-import { Box, Typography } from "@mui/material";
+import { Box, Modal, Typography } from "@mui/material";
 import { collection, getDoc, getDocs, query } from "firebase/firestore";
 
 export default function Home() {
@@ -80,6 +80,7 @@ export default function Home() {
 			alignItems="center"
 			gap={2}
 		>
+			<Modal></Modal>
 			<Typography variant="h1">Inventory Management</Typography>
 		</Box>
 	);
