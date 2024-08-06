@@ -68,6 +68,9 @@ export default function Home() {
 	}, []);
 	//[] here is a dependency array; when empty it means we only run once aka when the page loads
 
+	const handleOpen = () => setOpen(true);
+	const handleClose = () => setOpen(false);
+
 	return (
 		<Box>
 			<Typography variant="h1">Inventory Management</Typography>
