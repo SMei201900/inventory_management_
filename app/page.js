@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { firestore } from "@/firebase";
-import { Box, Modal, Typography } from "@mui/material";
-import { collection, getDoc, getDocs, query } from "firebase/firestore";
+import { Box, Modal, Typography, Stack } from "@mui/material";
+import { collection, deleteDoc, doc, getDocs, query } from "firebase/firestore";
 
 export default function Home() {
 	const [inventory, setInventory] = useState([]); //state variable to store inventory
@@ -95,7 +95,8 @@ export default function Home() {
 					flexDirection="column"
 					gap={3}
 				>
-					<Typography></Typography>
+					<Typography variant="h6">Add Item</Typography>
+					<Stack width="100%" direction="row" spacing={2}></Stack>
 				</Box>
 			</Modal>
 			<Typography variant="h1">Inventory Management</Typography>
