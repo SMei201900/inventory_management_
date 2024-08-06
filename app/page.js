@@ -80,7 +80,14 @@ export default function Home() {
 			alignItems="center"
 			gap={2}
 		>
-			<Modal></Modal>
+			<Modal open={open} onClose={handleClose}>
+				<Box
+					position="absolute"
+					top="50%"
+					left="50%"
+					transform="translate(-50%,-50%)"
+				></Box>
+			</Modal>
 			<Typography variant="h1">Inventory Management</Typography>
 		</Box>
 	);
