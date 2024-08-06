@@ -150,6 +150,7 @@ export default function Home() {
 					</Typography>
 				</Box>
 			</Box>
+			<Stack width="800px" height="300px" spacing={2} overflow="auto"></Stack>
 		</Box>
 	);
 }
