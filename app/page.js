@@ -30,6 +30,20 @@ export default function Home() {
 		setInventory(inventoryList);
 	};
 
+	const addItem = async (item) => {
+		const docRef = doc(collection(firestore, "inventory"), item);
+		const docSnap = await getDoc(docRef);
+
+		if (docSnap.exists()) {
+			if (quantity === 1) {
+				await deleteDoc(docRef);
+			} else {
+				await setDoc(docRef, { quantity: quantity - 1 });
+			}
+		}
+		await updateInventory;
+	};
+
 	const removeItem = async (item) => {
 		//This allows us to get a direct item reference
 		const docRef = doc(collection(firestore, "inventory"), item);
