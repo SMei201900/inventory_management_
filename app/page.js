@@ -5,6 +5,7 @@ import { firestore } from "@/firebase";
 import { Box, Typography } from "@mui/material";
 
 export default function Home() {
+	const [inventory, setInventory] = useState([]);
 	return (
 		<Box>
 			<Typography variant="h1">Inventory Management</Typography>
