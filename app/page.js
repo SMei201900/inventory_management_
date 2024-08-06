@@ -162,7 +162,9 @@ export default function Home() {
 						bgColor="#f0f0f0"
 						padding={5}
 					>
-						<Typography>{name}</Typography>
+						<Typography variant="h3" color="#333" textAlign="center">
+							{name.charAt(0).toUpperCase() + name.slide(1)}
+						</Typography>
 					</Box>
 				))}
 			</Stack>
