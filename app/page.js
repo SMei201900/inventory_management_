@@ -34,16 +34,18 @@ export default function Home() {
 		//This allows us to get a direct item reference
 		const docRef = doc(collection(firestore, "inventory"), item);
 		//Now we want a snapshot of this so we do getDoc
-    const docSnap = await getDoc(docRef);
-    
-    if (docSnap.exists()) {
-      const { quantity } = docSnap.data() 
-      //if quantity equals to 1, we delete it 
-      if (quantity === 1) {
-        await 
-      }
-    }
+		const docSnap = await getDoc(docRef);
 
+		if (docSnap.exists()) {
+			const { quantity } = docSnap.data();
+			//if quantity equals to 1, we delete it
+			if (quantity === 1) {
+				await deleteDoc(docRef);
+			} else {
+				await setDoc(docRef, { quantity: quantity - 1 });
+			}
+		}
+		await updateInventory;
 	};
 
 	//this runs the updateInventory code for whenever the [] changes
