@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { firestore } from "@/firebase";
 import { Box, Typography } from "@mui/material";
-import { collection, getDocs, query } from "firebase/firestore";
+import { collection, getDoc, getDocs, query } from "firebase/firestore";
 
 export default function Home() {
 	const [inventory, setInventory] = useState([]); //state variable to store inventory
@@ -28,7 +28,22 @@ export default function Home() {
 			});
 		});
 		setInventory(inventoryList);
-		console.log(inventoryList);
+	};
+
+	const removeItem = async (item) => {
+		//This allows us to get a direct item reference
+		const docRef = doc(collection(firestore, "inventory"), item);
+		//Now we want a snapshot of this so we do getDoc
+    const docSnap = await getDoc(docRef);
+    
+    if (docSnap.exists()) {
+      const { quantity } = docSnap.data() 
+      //if quantity equals to 1, we delete it 
+      if (quantity === 1) {
+        await 
+      }
+    }
+
 	};
 
 	//this runs the updateInventory code for whenever the [] changes
