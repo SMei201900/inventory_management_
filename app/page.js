@@ -72,7 +72,14 @@ export default function Home() {
 	const handleClose = () => setOpen(false);
 
 	return (
-		<Box width="100vw">
+		<Box
+			width="100vw"
+			height="100vw"
+			display="flex"
+			justifyContent="center"
+			alignItems="center"
+			gap={2}
+		>
 			<Typography variant="h1">Inventory Management</Typography>
 		</Box>
 	);
