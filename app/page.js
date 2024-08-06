@@ -106,7 +106,15 @@ export default function Home() {
 							onChange={(e) => {
 								setItemName(e.target.value);
 							}}
-						></TextField>
+						/>
+						<Button
+							variant="outlined"
+							onClick={() => {
+								addItem(itemName);
+								setItemName("");
+								handleClose();
+							}}
+						></Button>
 					</Stack>
 				</Box>
 			</Modal>
