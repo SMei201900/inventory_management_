@@ -7,7 +7,7 @@ import { collection, deleteDoc, doc, getDocs, query } from "firebase/firestore";
 
 export default function Home() {
 	const [inventory, setInventory] = useState([]); //state variable to store inventory
-	const [open, setOpen] = useState(false); //this is how we are going to add or remove stuff
+	const [open, setOpen] = useState(true); //this is how we are going to add or remove stuff
 	const [itemName, setItemName] = useState(""); //this is where we store what we type
 
 	//async means it wont block our code when fetching; if blocked, entire website freezes
@@ -85,7 +85,6 @@ export default function Home() {
 					position="absolute"
 					top="50%"
 					left="50%"
-					transform="translate(-50%,-50%)"
 					width={400}
 					bgcolor="white"
 					border="2px solid #000"
@@ -94,6 +93,9 @@ export default function Home() {
 					display="flex"
 					flexDirection="column"
 					gap={3}
+					sx={{
+						transform: "translate(-50%,-50%)",
+					}}
 				>
 					<Typography variant="h6">Add Item</Typography>
 					<Stack width="100%" direction="row" spacing={2}></Stack>
