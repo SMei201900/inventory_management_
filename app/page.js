@@ -163,7 +163,7 @@ export default function Home() {
 						padding={5}
 					>
 						<Typography variant="h3" color="#333" textAlign="center">
-							{name.charAt(0).toUpperCase() + name.slide(1)}
+							{name.charAt(0).toUpperCase() + name.slice(1)}
 						</Typography>
 						<Typography variant="h3" color="#333" textAlign="center">
 							{quantity}
