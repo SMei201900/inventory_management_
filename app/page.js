@@ -2,7 +2,14 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { firestore } from "@/firebase";
-import { Box, Modal, Typography, Stack, TextField } from "@mui/material";
+import {
+	Box,
+	Modal,
+	Typography,
+	Stack,
+	TextField,
+	Button,
+} from "@mui/material";
 import { collection, deleteDoc, doc, getDocs, query } from "firebase/firestore";
 
 export default function Home() {
@@ -108,7 +115,6 @@ export default function Home() {
 							}}
 						/>
 						<Button
-							variant="outlined"
 							onClick={() => {
 								addItem(itemName);
 								setItemName("");
