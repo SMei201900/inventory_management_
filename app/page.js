@@ -98,7 +98,9 @@ export default function Home() {
 					}}
 				>
 					<Typography variant="h6">Add Item</Typography>
-					<Stack width="100%" direction="row" spacing={2}></Stack>
+					<Stack width="100%" direction="row" spacing={2}>
+						<TextField></TextField>
+					</Stack>
 				</Box>
 			</Modal>
 			<Typography variant="h1">Inventory Management</Typography>
