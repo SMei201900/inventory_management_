@@ -150,7 +150,22 @@ export default function Home() {
 					</Typography>
 				</Box>
 			</Box>
-			<Stack width="800px" height="300px" spacing={2} overflow="auto"></Stack>
+			<Stack width="800px" height="300px" spacing={2} overflow="auto">
+				{inventory.map(({ name, quantity }) => (
+					<Box
+						key={name}
+						width="100%"
+						minHeight="150px"
+						display="flex"
+						alignItems="center"
+						justifyContent="center"
+						bgColor="#f0f0f0"
+						padding={5}
+					>
+						<Typography>{name}</Typography>
+					</Box>
+				))}
+			</Stack>
 		</Box>
 	);
 }
