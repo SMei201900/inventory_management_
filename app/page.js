@@ -16,6 +16,18 @@ export default function Home() {
 		const snapshot = query(collection(firestore, "inventory"));
 		//now we want to fetch the documents INSIDE the collection
 		const docs = await getDocs(snapshot);
+		const inventoryList = [];
+
+		//for every element in docs --> docs.forEach
+		//for every doc, we want to add it into our inventoryList
+		docs.forEach((doc) => {
+			inventoryList.push({
+				//we want to push a new object
+				name: doc.id, //where the name of it is the id of the doc
+				...doc.data(),
+			});
+		});
+		setInventory(inventoryList);
 	};
 
 	return (
