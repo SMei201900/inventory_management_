@@ -30,6 +30,12 @@ export default function Home() {
 		setInventory(inventoryList);
 	};
 
+	//this runs the updateInventory code for whenever the [] changes
+	useEffect(() => {
+		updateInventory();
+	}, []);
+	//[] here is a dependency array; when empty it means we only run once aka when the page loads
+
 	return (
 		<Box>
 			<Typography variant="h1">Inventory Management</Typography>
